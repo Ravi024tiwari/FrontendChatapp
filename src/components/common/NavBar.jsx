@@ -15,7 +15,7 @@ const Navbar = () => {
 
     const handleLogout = async () => {
         try {
-            const res = await axios.post("http://localhost:8080/api/v1/logout", {}, { withCredentials: true });
+            const res = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/logout`, {}, { withCredentials: true });
             if (res.data.success) {
                 disconnectSocket();
                 dispatch(setAuthUser(null));

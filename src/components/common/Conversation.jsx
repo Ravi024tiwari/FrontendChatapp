@@ -15,7 +15,7 @@ const Conversations = () => {
         const getConversations = async () => {
             setLoading(true);
             try {
-                const res = await axios.get("http://localhost:8080/api/v1/sidebar/user", {
+                const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/VITE_BACKEND_URL`, {
                     withCredentials: true,
                 });
                 

@@ -17,7 +17,7 @@ const MessageInput = () => {
         setLoading(true);
         try {
             const res = await axios.post(
-                `http://localhost:8080/api/v1/send/${selectedConversation._id}`,
+                `${import.meta.env.VITE_BACKEND_URL}/send/${selectedConversation._id}`,
                 { message },
                 { withCredentials: true }
             );

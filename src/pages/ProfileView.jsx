@@ -109,7 +109,7 @@ const ProfileView = () => {
                     </div>
                 </div>
 
-                {/* Secure Footer Info */}
+                {/* s Footer Info */}
                 <div className="mt-8 text-center">
                     <p className="text-[9px] font-black text-gray-300 uppercase tracking-[0.3em]">
                         AURA Secure Infrastructure v2.0

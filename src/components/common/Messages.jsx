@@ -17,7 +17,7 @@ const Messages = () => {
             if (!selectedConversation?._id) return;
             setLoading(true);
             try {
-                const res = await axios.get(`http://localhost:8080/api/v1/${selectedConversation._id}/getHistory`, {
+                const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/${selectedConversation._id}/getHistory`, {
                     withCredentials: true,
                 });
                 if (res.data.success) {

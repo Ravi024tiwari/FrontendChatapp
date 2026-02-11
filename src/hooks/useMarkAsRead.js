@@ -17,7 +17,7 @@ const useMarkAsRead = () => {
                 dispatch(clearUnreadCount(selectedConversation._id));
 
                 await axios.patch(
-                    `http://localhost:8080/api/v1/markasread/${selectedConversation._id}`, 
+                    `${import.meta.env.VITE_BACKEND_URL}/markasread/${selectedConversation._id}`, 
                     {}, 
                     { withCredentials: true }
                 );

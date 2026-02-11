@@ -27,7 +27,7 @@ function App() {
   useEffect(() => {
     const checkAuth = async () => {
       try {
-        const res = await axios.get("http://localhost:8080/api/v1/me", {
+        const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL/me}`, {
           withCredentials: true,
         });
         if (res.data.success) {

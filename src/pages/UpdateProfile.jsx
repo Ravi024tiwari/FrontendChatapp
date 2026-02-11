@@ -33,7 +33,7 @@ const UpdateProfile = () => {
         if (imageFile) formData.append("profilePic", imageFile);
 
         try {
-            const res = await axios.put("http://localhost:8080/api/v1/update/profile", formData, {
+            const res = await axios.put(`${import.meta.env.VITE_BACKEND_URL}/update/profile`, formData, {
                 withCredentials: true,
                 headers: { "Content-Type": "multipart/form-data" }
             });

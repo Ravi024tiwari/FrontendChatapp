@@ -5,7 +5,7 @@ let socket = null;
 export const connectSocket = (userId) => {
     if (socket && socket.connected) return socket;
     if (!socket) {
-        socket = io("http://localhost:8080", {
+        socket = io(import.meta.env.VITE_BACKEND_SOCKET_URL, {
             query: { userId },
             reconnection: true,
         });
