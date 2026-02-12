@@ -4,6 +4,8 @@ import { Check, CheckCheck } from "lucide-react";
 const Message = ({ message }) => {
     const { authUser } = useSelector((store) => store.auth);
     const { selectedConversation } = useSelector((store) => store.chat);
+    const chatState = useSelector((store) => store.chat);
+    console.log("Current Chat State for checking of redux:", chatState);
     
     const fromMe = message.senderId === authUser?._id;
     const profilePic = fromMe ? authUser?.profilePic : selectedConversation?.profilePic;

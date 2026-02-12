@@ -35,7 +35,10 @@ function App() {
         }
       } catch (error) {
         console.log("Not authenticated");
-        dispatch(setAuthUser(null));
+        // Sirf tab null karein agar status code specifically 401 (Unauthorized) ho
+        if (error.response?.status === 401) {
+            dispatch(setAuthUser(null));
+        }
       } finally {
         setIsCheckingAuth(false);
       }
